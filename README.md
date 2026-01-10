@@ -13,6 +13,8 @@ I am using this repo to practice:
 
 ## 📘 Learning Modules
 
+### Cloud Engineering Fundamentals
+
 ### 01. Networking
 - [Ingress & Egress Firewall Rules](01-Networking/Ingress-egress.md)
 
