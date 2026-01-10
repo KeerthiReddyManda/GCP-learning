@@ -13,11 +13,14 @@ I am using this repo to practice:
 
 ## 📘 Learning Modules
 
-### 00. Cloud Basics
-- [Cloud Engineering Fundamentals](00-Cloud-basics/Cloud-engineering-fundamentals.md)
+### Cloud Basics
+- [Cloud Engineering Fundamentals](Cloud-basics/Cloud-engineering-fundamentals.md)
 
-### 01. Networking
-- [Ingress & Egress Firewall Rules](01-Networking/Ingress-egress.md)
+### IAM
+- [IAM-access](IAM/IAM-access.md)
+
+### Networking
+- [Ingress & Egress Firewall rules](Networking/Ingress-Egress.md)
 
 ### 02. IAM
 - Coming soon
