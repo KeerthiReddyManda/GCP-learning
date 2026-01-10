@@ -21,7 +21,7 @@ I am using this repo to practice:
 - [IAM-access](IAM/IAM-access.md)
   
 ### Networking
-- [Virtual Private Cloud] (Networking/VPC.md)
+- [Virtual Private Cloud](Networking/VPC.md)
 - [Ingress & Egress Firewall rules](Networking/Ingress-Egress.md)
 
 ### VPC
