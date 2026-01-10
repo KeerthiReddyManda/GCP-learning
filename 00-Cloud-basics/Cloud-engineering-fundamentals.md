@@ -54,8 +54,8 @@ Cloud computing is to deliver computing services such as servers, storage, datab
 * Step 1: Open > console.cloud.google.com (https://console.cloud.google.com), if existing gmail can directly click on login credentials or else select create account and proceed with the available email and verification steps to create a account.
 * Step 2: Select the country, check box Terms of Service & Click Agree & Continue
 * Step 3: Google is providing $300 in free credits > Select Try for free then proceed woth the steps
-  Step 1 of 2 Account Information > Select Country > Click Agree & Continue 
-  Step 2 of 2 Payment Verification Information > Contact Information > Add name & address > Fill all the required details Individual or Organisation > Click Save > Payment Method > Select payment option > CRedit/Debit Crad or Bank Account > Provide Details (Note: No amount will be directly debited without your approval) > Save > Start Free 
+  - Step 1 of 2 Account Information > Select Country > Click Agree & Continue 
+  - Step 2 of 2 Payment Verification Information > Contact Information > Add name & address > Fill all the required details Individual or Organisation > Click Save > Payment Method > Select payment option > CRedit/Debit Crad or Bank Account > Provide Details (Note: No amount will be directly debited without your approval) > Save > Start Free 
 * Note: $300 Credits will be added to the console account which will be available for usage upto 91 days or credits usage completion whichever is earlier 
 
 
