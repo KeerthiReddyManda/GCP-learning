@@ -190,8 +190,14 @@ cat file_id
 ```
 
 To modify permissions directly using CLI, use:
-- --add-permissions
-- --remove-permissions 
+**Add Permissions**
+```bash
+gcloud iam roles update ROLE_ID --project=PROJECT_ID --add-permissions="required permissions"
+```
+**Remove Permissions**
+```bash
+gcloud iam roles update ROLE_ID --project=PROJECT_ID --remove-permissions="required permissions"
+```
 
 ####  How to assign multiple roles to a User
 
