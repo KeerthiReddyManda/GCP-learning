@@ -3,11 +3,12 @@
 This repository contains my hands-on learning and practice for **Google Cloud Platform (GCP)**.
 
 I am using this repo to practice:
-- GCP networking
+- Cloud Basics
 - IAM (Identity & Access Management)
 - Compute Engine
 - Firewall rules
 - VPC peering and routing
+- Networking
 
 ---
 
