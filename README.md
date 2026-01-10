@@ -24,9 +24,6 @@ I am using this repo to practice:
 - [Virtual Private Cloud](Networking/VPC.md)
 - [Ingress & Egress Firewall rules](Networking/Ingress-Egress.md)
 
-### VPC
-- Coming soon
-
 ### Firewall Creation
 - Coming soon
 
