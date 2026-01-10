@@ -3,43 +3,47 @@
 ## Why Companies are moving to cloud?
 
 ### Business Perspective
-1. Shifting from Capital Expenditure to Operational Expenditure
-2. Scalability
-3. Built in High Availability & Disaster Recovery
+1. Shift from Capital Expenditure (CapEx) to Operational Expenditure (OpEx)
+2. Scalability based on demand
+3. Built-in High Availability & Disaster Recovery
 
 ### Tech Perspective
-1. Can create provision resources instantly
-2. Automation (HCL as code)
-3. Scalability (Global reach & performance)
+1. Rapid provision of resources
+2. Automation using Infrastructure as Code (IAC)
+3. Global Scalability and performance 
 
-## What does Cloud Engineer team do?
-They manage, maintain & develop the cloud deployed services.
-Team members: 
-1. Cloud Architecture
+## What does a Cloud Engineer Team do?
+Cloud teams design, build, manage and maintain cloud based services.
+
+Teypical roles include:
+
+1. Cloud Architect
 2. Cloud Engineer
-3. Support Team
-4. Intern
+3. Support / Operations Team
+4. Interns / Trainees
 
-## Difference between Cloud Architecture & Cloud Engineer
-Cloud Architecture - Designs the req uirement
-Cloud Engineer - Executes the requirement
+## Cloud Architect vs Cloud Engineer
+Cloud Architect - Designs the overall cloud solution and architecture
+Cloud Engineer - Implements, operates and maintains the designed solution
 
 ## What is Cloud computing?
-Cloud computing is to deliver computing services such as servers, storage, databases, networking etc., over the internet at any time & from any place.
+Cloud computing is the deliver of computing services such as servers, storage, databases, networking and software over the internet, allowing access anytime & from any place.
 
-## Different Cloud service providers:
-1. GCP - Google
-2. Azure - Microsoft
-3. Amazon - AWS
+## Major Cloud service providers:
+1. Google Cloud Platfrom(GCP)
+2. Microsoft Azure
+3. Amazon Web Services (AWS)
 4. IBM Cloud
 5. Oracle Cloud
 6. Alibaba Cloud and so on 
 
-## Types of Cloud services:
-1. Public
-2. Private
-3. Hybrid
-4. Multi
+## Types of Cloud Deployment Models:
+1. Public Cloud
+2. Private Cloud
+3. Hybrid Cloud
+4. Multi Cloud
+
+- Note: This repository focuses on learning Google Cloud Platform (GCP).
 
 ## Cloud Computing Characteristics:
 1. On demand self service (All we need is a simple interface)
@@ -48,15 +52,13 @@ Cloud computing is to deliver computing services such as servers, storage, datab
 4. Rapid Elasticity (The resources are elastic)
 5. Measured service (Pay as you go)
 
-* We will be working on Google Cloud Platform (GCP)
-
-## How to create google cloud account?
-* Step 1: Open > console.cloud.google.com (https://console.cloud.google.com), if existing gmail can directly click on login credentials or else select create account and proceed with the available email and verification steps to create a account.
-* Step 2: Select the country, check box Terms of Service & Click Agree & Continue
-* Step 3: Google is providing $300 in free credits > Select Try for free then proceed woth the steps
-  - Step 1 of 2 Account Information > Select Country > Click Agree & Continue 
-  - Step 2 of 2 Payment Verification Information > Contact Information > Add name & address > Fill all the required details Individual or Organisation > Click Save > Payment Method > Select payment option > CRedit/Debit Crad or Bank Account > Provide Details (Note: No amount will be directly debited without your approval) > Save > Start Free 
-* Note: $300 Credits will be added to the console account which will be available for usage upto 91 days or credits usage completion whichever is earlier 
+## Creating a google cloud account 
+* Step 1: Visit https://console.cloud.google.com
+* Step 2: Sign in using existing google account or create a new account
+* Step 3: Accept the Terms of Service
+* Step 4: Activate the free trial (Google provides $300 in free credits (Valid for 90 days or until credits are exhausted)
+  - Step 1 of 2 Account Information > Select Country > Accept Terms > Continue 
+  - Step 2 of 2 Payment Verification Information > Contact Information > Add name & address > Fill all the required details Individual or Organisation > Click Save > Payment Method > Select payment option > CRedit/Debit Card or Bank Account > Provide Details (Note: No amount will be directly debited without your approval) > Save > Start Free 
 
 
 ## Infrastructure > Hierarchy > Project Creation 
@@ -72,7 +74,7 @@ Cloud infrastructure includes:
 
 
 ### Where is Infra created?
-* Regions: A independent geographical location where google cloud is having it's own data centre. 
+* Regions: An independent geographical location where Google cloud is having its own data centre. 
 * Zones: It's a isolated area within the region where data centres are available.
 
 Regions(42) > Zones(127) Every region has 3 zones whereas only us-central1 region has 4 zones 
@@ -97,7 +99,7 @@ Select the project by clicking on Project name (It can be found in All)
 
 #### Project details will be as below  
 * Project: 
-Project is seggregated into
+Project is segregated into
 1. Project Name - Created during the project - User Friendly - Can be changed 
 2. Project ID - Created during the project - Globally Unique - Cannot be changed (Editable only during creation)
 3. Project Number - After the project creation - Globally Unique - Cannot be changed (Created by google) ** Unique & important 
@@ -109,10 +111,6 @@ Search Compute Engine > Enable
 After enabling the Compute Engine Create VM using Console 
 Search VM > Select VM > Create Instance > Name*, Region*, Zone*, Machine Type > Create
 Example: Name: vm-1, Region: us-central1, Zone: Any, Machine Type: e2-micro (2 vCPU, 1 CORE, 1GB memory)
-
-
-
-
 
 
 
