@@ -22,8 +22,8 @@ graph TD
 ```mermaid
 graph TD
     VM --> Firewall
-    Firewall -->|Allowed (Priority 900)| Internet
-    Firewall -->|Denied (Priority 1000)| Drop[Traffic Blocked]
+    Firewall -->|Allowed Priority 900| Internet
+    Firewall -->|Denied Priority 1000| DropTraffic
 ```
 
 # Priority level: 
