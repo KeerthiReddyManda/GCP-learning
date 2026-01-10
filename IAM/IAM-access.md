@@ -190,6 +190,7 @@ cat file_id
 ```
 
 To modify permissions directly using CLI, use:
+
 **Add Permissions**
 ```bash
 gcloud iam roles update ROLE_ID --project=PROJECT_ID --add-permissions="required permissions"
