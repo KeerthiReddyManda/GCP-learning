@@ -19,14 +19,14 @@ I am using this repo to practice:
 
 ### IAM
 - [IAM-access](IAM/IAM-access.md)
-
+  
 ### Networking
 - [Ingress & Egress Firewall rules](Networking/Ingress-Egress.md)
 
-### 02. IAM
+### VPC
 - Coming soon
 
-### 03. Compute
+### Firewall Creation
 - Coming soon
 
   
