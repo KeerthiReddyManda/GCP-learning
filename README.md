@@ -11,10 +11,16 @@ I am using this repo to practice:
 
 ---
 
-## 📂 Repository Structure
+## 📘 Learning Modules
 
-```text
-gcp-learning/
-├── .gitignore
-├── README.md
+### 01. Networking
+- [Ingress & Egress Firewall Rules](01-networking/Ingress-egress.md)
+
+### 02. IAM
+- Coming soon
+
+### 03. Compute
+- Coming soon
+
+
 
