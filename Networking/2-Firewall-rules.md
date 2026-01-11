@@ -265,10 +265,10 @@ Every VPC comes with default firewall rules such as:
 ## Cleanup (Avoid Charges)
 
 ```bash
-gcloud compute firewall-rules delete allow-ssh allow-icmp-subnet-a deny-google allow-google
-gcloud compute instances delete vm-allow-google vm-deny-google --zone=$ZONE_ID
-gcloud compute networks subnets delete $SUBNET_NAME --region=$REGION_ID
-gcloud compute networks delete $VPC_NAME
+gcloud compute firewall-rules delete allow-ssh allow-icmp-subnet-a deny-google allow-google --quiet
+gcloud compute instances delete vm-allow-google vm-deny-google --zone=$ZONE_ID --quiet
+gcloud compute networks subnets delete $SUBNET_NAME --region=$REGION_ID --quiet
+gcloud compute networks delete $VPC_NAME --quiet
 ```
 
 ### Note: 
