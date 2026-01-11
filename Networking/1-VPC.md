@@ -35,7 +35,7 @@ gcloud compute networks describe $VPC_NAME
 ## Delete a VPC
 
 ```bash
-gcloud compute networks delete --network=$VPC_NAME
+gcloud compute networks delete --network=$VPC_NAME --quiet
 ```
 
 ## Create a Subnet in the VPC
@@ -63,7 +63,7 @@ gcloud compute networks subnets describe $SUBNET_NAME --region=$REGION_ID
 ## Delete a Subnet
 
 ```bash
-gcloud compute networks subnets delete $SUBNET_NAME --region=$REGION_ID
+gcloud compute networks subnets delete $SUBNET_NAME --region=$REGION_ID --quiet
 ```
 
 ## Create VM Instances in the Subnet
@@ -122,7 +122,7 @@ gcloud compute instances describe $INSTANCE_ID --zone=$ZONE_ID
 ## Delete an VM Instance
 
 ```bash
-gcloud compute instances delete $INSTANCE_ID --zone=$ZONE_ID
+gcloud compute instances delete $INSTANCE_ID --zone=$ZONE_ID --quiet
 ```
 
 ## Add Network Tags to an Existing VM
