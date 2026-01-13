@@ -1,7 +1,8 @@
 # Shared VPC
 
 **Shared VPC** allows multiple projects within the same Google Cloud organization to share a common VPC network.
-This enables centralized network management while allowing teams to deploy resources in separate projects.
+  This enables centralized network management while allowing teams to deploy resources in separate projects.
+  
 **Important:** Host and service projects must belong to the same organization.
 The only exception is during an organization migration, where service projects may temporarily belong to a different organization.
 
