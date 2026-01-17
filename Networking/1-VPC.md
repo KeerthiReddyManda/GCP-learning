@@ -1,6 +1,193 @@
 # Virtual Private Cloud (VPC)
 A Virtual Private Cloud (VPC) is a logicaly isolated network in Google Cloud where you can launch and manage resources such as virtual machines, subnets and firewall rules.
 
+**A VPC contains:**
+
+- Subnets (IP ranges in regions)
+- Routes (how traffic moves)
+- Firewall rules (allow/deny traffic)
+- VPN / Interconnect / Peering (connectivity options)
+
+## Auto Mode vs Custom Mode VPC
+
+##### ✅ Auto Mode VPC
+An auto mode VPC automatically creates:
+  - One subnet per region (Google-managed)
+  - Predefined IP ranges (like 10.128.0.0/9 split across regions)
+
+**Use when:**
+- You want quick setup for labs
+- You don’t care about controlling subnet ranges
+
+**Limitations:**
+- Less control over subnet CIDRs and network design
+- Not ideal for production architecture
+
+#### ✅ Custom Mode VPC
+A custom mode VPC requires you to manually create subnets:
+  - You define the subnet name, region, and CIDR range
+  - Full control over IP design
+
+**Use when:**
+- You want a clean enterprise-ready network design
+- You need specific IP planning (peering, VPN, shared VPC, etc.)
+
+Subnet (Subnetwork)
+
+A subnet is a regional segment of a VPC that defines an IP range for resources in that region.
+
+Key points:
+
+Subnets are regional (example: us-central1)
+
+VMs in a subnet get internal IPs from the subnet CIDR
+
+A VPC can have multiple subnets (even in the same region)
+
+Example:
+
+Subnet CIDR: 10.0.0.0/24
+
+Usable internal IPs: 10.0.0.1 to 10.0.0.254
+
+CIDR Range (IP Range)
+
+CIDR (Classless Inter-Domain Routing) defines a block of IP addresses.
+
+Example:
+
+10.0.0.0/24
+
+Meaning:
+
+/24 means 256 total IPs
+
+Network address: 10.0.0.0
+
+Broadcast address: 10.0.0.255
+
+Usable hosts: 10.0.0.1 to 10.0.0.254
+
+Common CIDRs:
+
+/24 → 256 IPs
+
+/20 → 4096 IPs
+
+/16 → 65,536 IPs
+
+VM Instance
+
+A VM instance is a virtual machine created in Compute Engine.
+
+When you create a VM, you typically choose:
+
+Region & zone
+
+Machine type (CPU/RAM)
+
+VPC + subnet (network placement)
+
+Whether it needs an external IP
+
+Network tags (optional)
+
+Internal IP
+
+An internal IP is a private IP address assigned to a VM from the subnet CIDR.
+
+Used for:
+
+VM-to-VM communication inside the VPC
+
+Communication over VPC peering/VPN (private networking)
+
+Example:
+
+VM internal IP: 10.0.0.5
+
+External IP
+
+An external IP is a public IP assigned to a VM for internet connectivity.
+
+Used for:
+
+SSH/RDP from your laptop
+
+Hosting websites/services directly on a VM
+
+Internet-facing access (when allowed by firewall)
+
+Notes:
+
+External IPs can be ephemeral (changes on stop/start) or static (reserved)
+
+Create VM without external IP:
+
+--no-address
+
+Firewall Rules
+
+Firewall rules in GCP control network traffic to and from VMs in a VPC.
+
+Two directions:
+
+Ingress: traffic coming into the VM
+
+Egress: traffic leaving from the VM
+
+Firewall rules are:
+
+Stateful (return traffic is automatically allowed)
+
+Evaluated by priority (lower number = higher priority)
+
+Applied at the VPC level, but enforced on VMs
+
+Example allow SSH:
+
+--direction=INGRESS --action=ALLOW --rules=tcp:22
+
+Network Tags
+
+Network tags are labels applied to VM instances to control which firewall rules apply to them.
+
+A firewall rule can use --target-tags=...
+
+Only VMs with that tag are affected by the rule
+
+Example:
+
+VM tag: allow-http
+
+Firewall rule targets: --target-tags=allow-http
+
+Add tag to an existing VM:
+
+gcloud compute instances add-tags VM_NAME \
+  --zone=ZONE \
+  --tags=allow-http
+
+
+Why tags are useful:
+
+Apply firewall rules to specific VMs without changing IP ranges
+
+Group workloads (web, db, bastion, private-vm)
+
+Suggested short “concept recap” block
+
+VPC = network container
+Subnet = regional IP range inside VPC
+CIDR = size of subnet IP block
+VM = compute resource inside subnet
+Internal IP = private address from subnet
+External IP = public internet address (optional)
+Firewall rules = allow/deny traffic to/from VMs
+Network tags = select which VMs a firewall rule applies to
+
+If you want, I can also merge these definitions directly into your existing file in the best places (so it reads smoothly like a chapter, not a glossary).
+
 ## Prerequisites
 Set the following environment variables before running the commands:
 
