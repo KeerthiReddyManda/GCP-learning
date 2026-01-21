@@ -206,7 +206,7 @@ gcloud compute instances create $INSTANCE2_ID \
   --no-address
 ```
 
-### **Firewall Rules** (Detail in [Firewall-rules](Networking/2-Firewall-rules.md))
+### **Firewall Rules** (Detail in [Firewall-rules](2-Firewall-rules.md))
 
 Firewall rules in GCP control network traffic to and from VMs in a VPC.
 
