@@ -25,8 +25,6 @@ I am using this repo to practice:
 - [Firewall-rules,Ingress-Egress](Networking/2-Firewall-rules.md)
 - [VPC-Peering](Networking/3-VPC-Peering.md)
 
-### Firewall Creation
-- Coming soon
 
   
 
