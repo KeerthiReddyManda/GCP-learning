@@ -58,3 +58,34 @@ graph TB
 ```
 
 In Shared VPC, the Host Project centrally manages networking resources, while Service Projects deploy workloads into shared subnets without owning the VPC.
+
+
+### Mandatory IAM permissions required in host and service project 
+
+#### Permissions in the Service project 
+Give the user
+- roles/compute.instancesadmin.v1
+- roles/iam.serviceAccountUser
+
+```bash
+gcloud projects add-iam-policy-binding SERVICE_PROJECT_ID \
+  --member="user:USER_EMAIL" \
+  --role="roles/compute.instanceAdmin.v1"
+```
+
+```bash
+gcloud iam service-accounts add-iam-policy-binding \
+  SERVICE_PROJECT_NUMBER-compute@developer.gserviceaccount.com \
+  --member="user:USER_EMAIL" \
+  --role="roles/iam.serviceAccountUser"
+```
+
+#### Permissions in the Host project 
+Allow the principal to use the network
+- roles/compute.networkuser
+
+```bash
+gcloud projects add-iam-policy-binding HOST_PROJECT_ID \
+  --member="user:USER_EMAIL" \
+  --role="roles/compute.networkUser"
+```
