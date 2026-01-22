@@ -89,3 +89,4 @@ gcloud projects add-iam-policy-binding HOST_PROJECT_ID \
   --member="user:USER_EMAIL" \
   --role="roles/compute.networkUser"
 ```
+**Note:** Shared VPC happens only at the organisation level 
