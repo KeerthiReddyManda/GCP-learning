@@ -19,6 +19,9 @@ A project participating in Shared VPC can be one of the following:
       - Routes
   - Acts as the central networking project
 
+**Note:** For traffic between service-project VMs, firewall rules are evaluated in the host project VPC, but can target VMs using network tags/service accounts from the service projects.
+
+
 ## **Service project:** 
   - Attached to a host project by a Shared VPC Admin.
   - Uses subnets from the host project
@@ -60,33 +63,40 @@ graph TB
 In Shared VPC, the Host Project centrally manages networking resources, while Service Projects deploy workloads into shared subnets without owning the VPC.
 
 
-### Mandatory IAM permissions required in host and service project 
+### Mandatory IAM permissions (Host + Service Projects)
 
-#### Permissions in the Service project 
-Give the user
-- roles/compute.instancesadmin.v1
-- roles/iam.serviceAccountUser
+#### Service project 
+Grant the user
+- `roles/compute.instanceAdmin.v1` (create/manage VM instances)
+- `roles/iam.serviceAccountUser` (use the VM service account)
 
 ```bash
 gcloud projects add-iam-policy-binding SERVICE_PROJECT_ID \
   --member="user:USER_EMAIL" \
   --role="roles/compute.instanceAdmin.v1"
 ```
+Grant Service Account User on the service account used by the VM (default or custom):
 
 ```bash
-gcloud iam service-accounts add-iam-policy-binding \
-  SERVICE_PROJECT_NUMBER-compute@developer.gserviceaccount.com \
+gcloud iam service-accounts add-iam-policy-binding SERVICE_ACCOUNT_EMAIL \
   --member="user:USER_EMAIL" \
   --role="roles/iam.serviceAccountUser"
 ```
 
+If the VM uses a custom service account, grant roles/iam.serviceAccountUser on that service account instead.
+
+
 #### Permissions in the Host project 
-Allow the principal to use the network
-- roles/compute.networkuser
+Allow the principal to use the Shared VPC subnet:
+- roles/compute.networkUser
+  
+**Best practice:** grant roles/compute.networkUser on the specific subnet instead of the whole host project.
 
 ```bash
 gcloud projects add-iam-policy-binding HOST_PROJECT_ID \
   --member="user:USER_EMAIL" \
   --role="roles/compute.networkUser"
 ```
-**Note:** Shared VPC happens only at the organisation level 
+
+
+**Note:** Shared VPC can be enabled only for projects that are under the same Google Cloud Organization (except temporary org migration scenarios).
