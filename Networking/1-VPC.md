@@ -39,16 +39,16 @@ A custom mode VPC requires you to manually create subnets:
 Set the following environment variables before running the commands:
 
 ```bash
-export VPC_NAME=my-custom-vpc
-export SUBNET_NAME=my-subnet
-export REGION_ID=us-central1
-export ZONE_ID=us-central1-a
+export VPC_NAME="my-custom-vpc"
+export SUBNET_NAME="my-subnet"
+export REGION_ID="us-central1"
+export ZONE_ID="us-central1-a"
 export CIDR_RANGE=10.0.0.0/24
-export MACHINE_TYPE=e2-micro
-export INSTANCE1_ID=vm-1
-export INSTANCE2_ID=vm-2
-export INSTANCE3_ID=vm-deny
-export INSTANCE4_ID=vm-secure
+export MACHINE_TYPE="e2-micro"
+export INSTANCE1_ID="vm-1"
+export INSTANCE2_ID="vm-2"
+export INSTANCE3_ID="vm-deny"
+export INSTANCE4_ID="vm-secure"
 ```
 
 #### Create a custom-mode VPC
