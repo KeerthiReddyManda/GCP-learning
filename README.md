@@ -1,15 +1,14 @@
 # 🌩️ GCP Learning Repository
 
-This repository contains my hands-on learning and practice for **Google Cloud Platform (GCP)**.
-
-I am using this repo to practice:
-- Cloud Basics
-- IAM (Identity & Access Management)
+This repository is a learning portfolio where I documented hand-on practice with Google Cloud Platform. including:
+- IAM (Identity & Access Management) configuration
+- Networking and VPC
+- Firewall and Secured Access
 - Compute Engine
-- Firewall rules
-- VPC peering and routing
-- Networking
+- Cloud Storage (GCS)
+- Debugging real errors
 
+Goal: Build proficiency and create reusable scripts and documentation.
 ---
 
 ## 📘 Learning Modules
