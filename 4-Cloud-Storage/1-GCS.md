@@ -1,8 +1,22 @@
-# What is Google Cloud Storage?
+# What is Google Cloud Storage(GCS)?
 
-Cloud Storage is an object storage service in Google Cloud. An **object** is immutable data (a file of any format) stored in a **bucket**. Buckets can appear “folder-like” using **object name prefixes** (GCS is flat storage; folders are logical).
+Cloud Storage is an object storage service in Google Cloud used to store unstructured data as objects inside buckets. An **object** is immutable data (a file of any format) stored in a **bucket**. Buckets can appear “folder-like” using **object name prefixes** (GCS is flat storage; folders are logical).
 
 Buckets belong to a **project**. Projects can be grouped under an **organisation**. Projects, buckets, objects, and managed folders are Google Cloud resources.
+
+### **Best use cases**
+- Backups
+- Logs
+- Media files (images/videos)
+- Data lakes
+- Static website hosting
+
+### **Key features**
+- High durability
+- Lifecycle rules
+- Object versioning
+- IAM-based access control
+- Encryption at rest (default)
 
 
 ## Creating a bucket - Key decisions
