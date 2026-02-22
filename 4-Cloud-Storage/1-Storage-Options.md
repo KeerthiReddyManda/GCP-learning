@@ -34,7 +34,7 @@ H -->|Attached to VM as Disk| K[Persistent Disk]
 ```
 
 
-## Object storage
+## Object storage ([GCS](4-Cloud-Storage/GCS.md))
 
 
 ## Block storage 
