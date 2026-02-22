@@ -27,7 +27,7 @@ Goal: Build proficiency and create reusable scripts and documentation.
 - [IAP](3-Networking/5-IAP(Identity-AwareProxy).md)
 
 ### Cloud Storage
-- [GCS](4-Cloud-Storage/1-GCS.md)
+- [GCS](4-Cloud-Storage/GCS.md)
 
 
   
