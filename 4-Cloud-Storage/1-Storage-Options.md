@@ -88,7 +88,7 @@ High-performance block storage designed for enterprise workloads.
 - Suitable for demanding workloads
 
 
-## Object Storage ([GCS](https://github.com/KeerthiReddyManda/GCP-learning/blob/main/4-Cloud-Storage/1-GCS.md))
+## Object Storage [GCS](../GCS.md)
 
 
 ## File Storage
