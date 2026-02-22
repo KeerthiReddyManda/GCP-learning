@@ -34,7 +34,7 @@ H -->|Attached to VM as Disk| K[Persistent Disk]
 ```
 
 
-## Object storage( [GCS](4-Cloud-Storage/GCS.md) )
+## Object storage[GCS](../GCS.md)
 
 ## Block storage 
 Block storage is disk-based storage attached directly to Compute Engine VMs.
