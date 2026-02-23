@@ -1,6 +1,6 @@
 # 🌩️ GCP Learning Repository
 
-This repository is a learning portfolio where I documented hand-on practice with Google Cloud Platform. including:
+This repository is a learning portfolio where I documented hands-on practice with Google Cloud Platform including:
 - IAM (Identity & Access Management) configuration
 - Networking and VPC
 - Firewall and Secured Access
