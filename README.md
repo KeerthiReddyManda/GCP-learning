@@ -30,6 +30,9 @@ Goal: Build proficiency and create reusable scripts and documentation.
 - [Storage-Services](4-Cloud-Storage/1-Storage-Options.md)
 - [GCS](4-Cloud-Storage/GCS.md)
 
+### Load Balancer
+- [Load Balancer](5-Load-Balancer/load-balancing-gcp.md)
+
 
   
 
