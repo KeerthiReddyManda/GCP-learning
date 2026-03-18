@@ -207,7 +207,7 @@ Traffic automatically routes to asia-southeast1
 - Disaster recovery
 - Low latency
 
-
+## Script below creates the following resources for a global HTTP load balancer setup:
 ### Resources created in sequence
 VPC (`vpc-alb`) → Subnets (`subnet-alb-central`, `subnet-alb-asia`) → Firewall rules (`allow-ssh-icmp-http`, `allow-health-checks`) → Startup script (`startup-script.sh`) → Instance templates (`instance-central`, `instance-asia`) → Global health check (`health-check`) → Managed instance groups (`alb-mig-central`, `alb-mig-asia`) → Named ports → Global static IP (`alb-global-ip`) → Backend service (`alb-backend-service`) → URL map (`alb-url-map`) → Target HTTP proxy (`alb-http-proxy`) → Forwarding rule (`alb-forwarding-rule`)
 
@@ -220,7 +220,6 @@ gcloud compute networks create vpc-alb \
 echo "VPC Network created.."
 
 ### Create Subnet in us-central1 & asia-southeast1
-
 # Subnet in us-central1
 gcloud compute networks subnets create subnet-alb-central \
     --network=vpc-alb \
@@ -229,17 +228,15 @@ gcloud compute networks subnets create subnet-alb-central \
 echo "Subnet in us-central1 created..."
 
 # Subnet in asia-southeast1
-
 gcloud compute networks subnets create subnet-alb-asia \
     --network=vpc-alb \
     --region=asia-southeast1 \
     --range=10.1.0.0/24
 echo "Subnet in asia-southeast1 created..."
 
-### Create Firewall Rules
+## Create Firewall Rules
 
 ### Allow SSH(Port 22), HTTP(Port 80), and ICMP from any Source
-
 gcloud compute firewall-rules create allow-ssh-icmp-http \
     --network=vpc-alb \
     --allow=tcp:22,tcp:80,icmp \
@@ -251,16 +248,13 @@ echo "Firewall rules created."
 ### Health Check firewall-rule
 # Note: Google Cloud Health Checks use specific ip ranges (130.211.0.0/22 and 35.191.0.0/16). Always include these IP ranges in firewall rules to avoid failed health checks. 
 
-
 gcloud compute firewall-rules create allow-health-checks \
     --network=vpc-alb \
     --allow=tcp:80 \
     --source-ranges=130.211.0.0/22,35.191.0.0/16
 echo "Health check firewall rule created...."
 
-
 ### Define and Save the Startup Script
-
 STARTUP_SCRIPT_CONTENT=$(cat <<'SCRIPT'
 #!/bin/bash
 set -e
@@ -374,7 +368,6 @@ chmod +x startup-script.sh
 echo "Startup script created.."
 
 ### Create Instance templates for us-central1 & asia-southeast1
-
 # Instance template for us-central1 
 gcloud compute instance-templates create instance-central \
     --machine-type=e2-micro \
@@ -401,7 +394,6 @@ echo "Global health check created..."
 export PROJECT_ID=$(gcloud config get-value project)
 echo $PROJECT_ID
 
- 
 ### Create a Managed Instance Group 
 # Managed instance group in us-central1
 gcloud compute instance-groups managed create alb-mig-central \
@@ -486,7 +478,6 @@ gcloud compute forwarding-rules create alb-forwarding-rule \
     --address=alb-global-ip \
     --ports=80
 
-
 ### Get static IP
 STATIC_IP=$(gcloud compute addresses describe alb-global-ip --global --format="get(address)")
 echo $STATIC_IP
@@ -514,6 +505,7 @@ gcloud dns record-sets create www.example.com. \
 ```
 
 **Note:** Replace `example.com` and `my-zone` with your actual domain and Cloud DNS managed zone.
+
 
 ### Cleanup (To avoid Charges)
 
